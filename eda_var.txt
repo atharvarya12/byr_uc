@@ -1,0 +1,14 @@
+# Variable Encoding Specification
+phase
+
+# Categorical Variables (One-Hot Encoding)
+
+condition
+sposers
+gender
+location
+final_status
+
+# Numerical Variables (Robust Scaler Normalization)
+enrollment
+duration
