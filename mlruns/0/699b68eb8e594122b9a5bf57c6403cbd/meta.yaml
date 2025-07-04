@@ -1,0 +1,14 @@
+artifact_uri: file:///D:/byr_uc/byr_uc/mlruns/0/699b68eb8e594122b9a5bf57c6403cbd/artifacts
+end_time: 1751586624589
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 699b68eb8e594122b9a5bf57c6403cbd
+run_name: XGBoost
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1751586619760
+status: 3
+tags: []
+user_id: dell

@@ -1,0 +1,50 @@
+# === Python Bytecode and Cache ===
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# === Virtual Environment ===
+myenv/
+venv/
+.env/
+
+# === VS Code Settings ===
+.vscode/
+
+# === Logs and Outputs ===
+*.log
+
+# === Model Artifacts ===
+# Commented out to allow pushing .pkl and .tar.gz
+# *.pkl
+# *.tar.gz
+# mlruns/
+# mlartifacts/
+
+# === Dataset Files (Optional: keep ignored)
+*.csv
+
+# === Jupyter Notebook Checkpoints ===
+.ipynb_checkpoints/
+
+# === System Files ===
+.DS_Store
+Thumbs.db
+
+# === Reports or Generated Images ===
+# Commented out to allow pushing ROC curves and text reports
+# *.png
+# *.jpg
+# *.jpeg
+# *.pdf
+# *.svg
+
+# === Git Metadata Files ===
+*.swp
+*.swo
+*.bak
+
+
+
+
