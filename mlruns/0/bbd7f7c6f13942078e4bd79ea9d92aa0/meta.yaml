@@ -1,0 +1,14 @@
+artifact_uri: file:///workspaces/byr_uc/mlruns/0/bbd7f7c6f13942078e4bd79ea9d92aa0/artifacts
+end_time: 1751614635818
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: bbd7f7c6f13942078e4bd79ea9d92aa0
+run_name: RandomForest
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1751614633168
+status: 3
+tags: []
+user_id: codespace

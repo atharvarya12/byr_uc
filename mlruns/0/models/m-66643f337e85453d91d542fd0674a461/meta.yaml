@@ -1,0 +1,10 @@
+artifact_location: file:///workspaces/byr_uc/mlruns/0/models/m-66643f337e85453d91d542fd0674a461/artifacts
+creation_timestamp: 1751614633184
+experiment_id: '0'
+last_updated_timestamp: 1751614635814
+model_id: m-66643f337e85453d91d542fd0674a461
+model_type: null
+name: model
+source_run_id: bbd7f7c6f13942078e4bd79ea9d92aa0
+status: 2
+status_message: null
