@@ -1,0 +1,22 @@
+# Ignore virtual environment
+myenv/
+
+# VS Code settings
+.vscode/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# ML model artifacts
+*.pkl
+*.tar.gz
+mlruns/
+reports/
+
+# Temporary datasets (optional)
+*.csv
+
+# Logs, env files, temp
+*.log
+.env
