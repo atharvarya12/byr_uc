@@ -1,9 +1,17 @@
+import mlflow
+mlflow.set_tracking_uri("file:///workspaces/byr_uc/mlruns")
+
+print(f"📍 MLflow Tracking URI: {mlflow.get_tracking_uri()}")
+
 import os
 import mlflow
 import mlflow.sklearn
 import mlflow.xgboost
 import json
 import pickle
+
+# === Set Tracking URI ===
+mlflow.set_tracking_uri("file:///workspaces/byr_uc/mlruns")  # Make sure this path is valid and writable
 
 # === Load metadata ===
 with open("models/metadata.json", "r") as f:
@@ -18,7 +26,6 @@ with mlflow.start_run(run_name="RandomForest"):
     mlflow.log_metric("roc_auc", metadata["rf"]["roc_auc"])
     mlflow.log_metric("f1_score", metadata["rf"]["f1_score"])
     mlflow.sklearn.log_model(rf_model, "model")
-
     mlflow.log_artifact("reports/RandomForest_classification_report.txt")
     mlflow.log_artifact("reports/RandomForest_roc_curve.png")
 
@@ -33,7 +40,6 @@ with mlflow.start_run(run_name="XGBoost"):
     mlflow.log_metric("roc_auc", metadata["xgb"]["roc_auc"])
     mlflow.log_metric("f1_score", metadata["xgb"]["f1_score"])
     mlflow.xgboost.log_model(xgb_model, "model")
-
     mlflow.log_artifact("reports/XGBoost_classification_report.txt")
     mlflow.log_artifact("reports/XGBoost_roc_curve.png")
 

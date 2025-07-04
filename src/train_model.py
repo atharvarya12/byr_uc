@@ -2,6 +2,7 @@ print("🚀 Script started...")
 
 import os
 import pandas as pd
+import pickle
 import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split, GridSearchCV, RandomizedSearchCV
 from sklearn.metrics import classification_report, roc_curve, auc
@@ -22,7 +23,13 @@ df = pd.read_csv(DATA_PATH)
 df = shuffle(df, random_state=42)
 
 X = df.drop(columns=["final_status_success", "Unnamed: 0"])
+# Save encoded column names
+encoded_X = pd.get_dummies(X, drop_first=True, dtype=int)
+with open("models/encoded_columns.pkl", "wb") as f:
+    pickle.dump(encoded_X.columns.tolist(), f)
+
 y = df["final_status_success"]
+
 
 # === Split and apply SMOTE ===
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)

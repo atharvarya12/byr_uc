@@ -1,0 +1,14 @@
+artifact_uri: file:///workspaces/byr_uc/mlruns/0/ebe4abd03969411fa6b0c15c9a59728f/artifacts
+end_time: 1751614638000
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: ebe4abd03969411fa6b0c15c9a59728f
+run_name: XGBoost
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1751614635977
+status: 3
+tags: []
+user_id: codespace
