@@ -1,0 +1,23 @@
+{
+    "rf": {
+        "params": {
+            "max_depth": 10,
+            "min_samples_leaf": 1,
+            "min_samples_split": 2,
+            "n_estimators": 100
+        },
+        "roc_auc": 0.7008109701129853,
+        "f1_score": 0.5613019891500904
+    },
+    "xgb": {
+        "params": {
+            "subsample": 0.8,
+            "scale_pos_weight": 2,
+            "n_estimators": 200,
+            "max_depth": 3,
+            "learning_rate": 0.01
+        },
+        "roc_auc": 0.7047738265190623,
+        "f1_score": 0.6693964550145838
+    }
+}

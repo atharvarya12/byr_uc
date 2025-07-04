@@ -1,22 +1,50 @@
-# Ignore virtual environment
-myenv/
+# === Python Bytecode and Cache ===
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
 
-# VS Code settings
+# === Virtual Environment ===
+myenv/
+venv/
+.env/
+
+# === VS Code Settings ===
 .vscode/
 
-# Python cache
-__pycache__/
-*.pyc
+# === Logs and Outputs ===
+*.log
 
-# ML model artifacts
-*.pkl
-*.tar.gz
-mlruns/
-reports/
+# === Model Artifacts ===
+# Commented out to allow pushing .pkl and .tar.gz
+# *.pkl
+# *.tar.gz
+# mlruns/
+# mlartifacts/
 
-# Temporary datasets (optional)
+# === Dataset Files (Optional: keep ignored)
 *.csv
 
-# Logs, env files, temp
-*.log
-.env
+# === Jupyter Notebook Checkpoints ===
+.ipynb_checkpoints/
+
+# === System Files ===
+.DS_Store
+Thumbs.db
+
+# === Reports or Generated Images ===
+# Commented out to allow pushing ROC curves and text reports
+# *.png
+# *.jpg
+# *.jpeg
+# *.pdf
+# *.svg
+
+# === Git Metadata Files ===
+*.swp
+*.swo
+*.bak
+
+
+
+

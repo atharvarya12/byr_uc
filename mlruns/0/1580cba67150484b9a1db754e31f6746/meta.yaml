@@ -1,0 +1,14 @@
+artifact_uri: file:///D:/byr_uc/byr_uc/mlruns/0/1580cba67150484b9a1db754e31f6746/artifacts
+end_time: 1751586618847
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 1580cba67150484b9a1db754e31f6746
+run_name: RandomForest
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1751586605963
+status: 3
+tags: []
+user_id: dell
