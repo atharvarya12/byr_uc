@@ -61,11 +61,14 @@ def plot_roc(y_true, y_probs, model_name):
 # === Random Forest + GridSearch ===
 print("🔍 Running GridSearchCV for Random Forest...")
 rf_params = {
-    'n_estimators': [100, 200],
-    'max_depth': [10, 20, None],
-    'min_samples_split': [2, 5],
-    'min_samples_leaf': [1, 2]
-}
+    'n_estimators': [100, 200], # Hyperparameter grid for Random Forest tuning , 'n_estimators': Number of trees in the forest (100 and 200)
+    'max_depth': [10, 20, None],# - 'max_depth': Maximum depth of each tree (10, 20, or unlimited if None)
+    'min_samples_split': [2, 5], # - 'min_samples_split': Minimum number of samples required to split an internal node (2 or 5)
+    'min_samples_leaf': [1, 2]}# - 'min_samples_leaf': Minimum number of samples required to be at a leaf node (1 or 2)
+
+    
+   
+   
 rf_base = RandomForestClassifier(class_weight='balanced', random_state=42)
 rf_grid = GridSearchCV(rf_base, rf_params, cv=3, scoring='f1', verbose=1, n_jobs=-1)
 rf_grid.fit(X_train, y_train)
