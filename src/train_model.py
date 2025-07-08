@@ -1,4 +1,4 @@
-print("🚀 Script started...")
+print(" Script started...")
 
 import os
 import pandas as pd
@@ -26,19 +26,19 @@ y = df["final_status_success"]
 
 # === Split and apply SMOTE ===
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-print("🧪 Before SMOTE:", y_train.value_counts().to_dict())
+print("Before SMOTE:", y_train.value_counts().to_dict())
 smote = SMOTE(random_state=42)
 X_train, y_train = smote.fit_resample(X_train, y_train)
-print("✅ After SMOTE:", y_train.value_counts().to_dict())
+print("After SMOTE:", y_train.value_counts().to_dict())
 
 # === Utility: Save classification report
 def save_classification_report(y_true, y_pred, model_name):
     report = classification_report(y_true, y_pred)
-    print(f"📊 Classification Report - {model_name}:\n{report}")
+    print(f" Classification Report - {model_name}:\n{report}")
     path = os.path.join("reports", f"{model_name}_classification_report.txt")
     with open(path, 'w') as f:
         f.write(report)
-    print(f"✅ Classification report saved: {path}")
+    print(f" Classification report saved: {path}")
 
 # === Utility: Plot and Save ROC Curve ===
 def plot_roc(y_true, y_probs, model_name):
@@ -55,11 +55,11 @@ def plot_roc(y_true, y_probs, model_name):
     plot_path = os.path.join("reports", f"{model_name}_roc_curve.png")
     plt.savefig(plot_path)
     plt.close()
-    print(f"✅ Saved ROC curve for {model_name} at: {plot_path}")
+    print(f" Saved ROC curve for {model_name} at: {plot_path}")
     return roc_auc
 
 # === Random Forest + GridSearch ===
-print("🔍 Running GridSearchCV for Random Forest...")
+print("Running GridSearchCV for Random Forest...")
 rf_params = {
     'n_estimators': [100, 200], # Hyperparameter grid for Random Forest tuning , 'n_estimators': Number of trees in the forest (100 and 200)
     'max_depth': [10, 20, None],# - 'max_depth': Maximum depth of each tree (10, 20, or unlimited if None)
@@ -77,12 +77,12 @@ y_pred_rf = best_rf.predict(X_test)
 save_classification_report(y_test, y_pred_rf, "RandomForest")
 rf_probs = best_rf.predict_proba(X_test)[:, 1]
 roc_auc_rf = plot_roc(y_test, rf_probs, "RandomForest")
-print(f"🎯 AUC (Random Forest): {roc_auc_rf:.4f}")
+print(f"AUC (Random Forest): {roc_auc_rf:.4f}")
 save_pickle(best_rf, "models/random_forest.pkl")
 compress_model("models/random_forest.pkl", "models/random_forest.tar.gz")
 
 # === XGBoost + RandomizedSearch ===
-print("🔍 Running RandomizedSearchCV for XGBoost...")
+print("Running RandomizedSearchCV for XGBoost...")
 xgb_params = {
     'n_estimators': [100, 200],
     'max_depth': [3, 5, 7],
@@ -98,7 +98,7 @@ y_pred_xgb = best_xgb.predict(X_test)
 save_classification_report(y_test, y_pred_xgb, "XGBoost")
 xgb_probs = best_xgb.predict_proba(X_test)[:, 1]
 roc_auc_xgb = plot_roc(y_test, xgb_probs, "XGBoost")
-print(f"🎯 AUC (XGBoost): {roc_auc_xgb:.4f}")
+print(f"AUC (XGBoost): {roc_auc_xgb:.4f}")
 save_pickle(best_xgb, "models/xgboost.pkl")
 compress_model("models/xgboost.pkl", "models/xgboost.tar.gz")
 
@@ -120,5 +120,5 @@ metadata = {
 
 with open("models/metadata.json", "w") as f:
     json.dump(metadata, f, indent=4)
-print("✅ Saved metadata for MLflow at models/metadata.json")
+print("Saved metadata for MLflow at models/metadata.json")
 
